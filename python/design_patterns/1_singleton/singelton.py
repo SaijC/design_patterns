@@ -1,6 +1,8 @@
-from abc import ABCMeta, abstractclassmethod
+from abc import ABCMeta, abstractmethod
 
 class IPerson(metaclass=ABCMeta):
+    @classmethod
+    @abstractmethod
     def print_data():
         """implement in child class"""
 
