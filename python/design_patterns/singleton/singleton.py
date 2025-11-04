@@ -1,10 +1,12 @@
 from abc import ABCMeta, abstractmethod
 
+
 class IPerson(metaclass=ABCMeta):
     @classmethod
     @abstractmethod
     def print_data():
         """implement in child class"""
+
 
 class PersonSingleton(IPerson):
 
@@ -15,8 +17,8 @@ class PersonSingleton(IPerson):
         if PersonSingleton.__instance == None:
             PersonSingleton("Default Name", 0)
         return PersonSingleton.__instance
-    
-    def __init__(self, name:str, age: int):
+
+    def __init__(self, name: str, age: int):
         if PersonSingleton.__instance != None:
             raise Exception("Singleton can't be instantiated more than ones!")
         else:
@@ -26,5 +28,5 @@ class PersonSingleton(IPerson):
 
     @staticmethod
     def print_data():
-        print(f"Name: {PersonSingleton.__instance.name}, age: {PersonSingleton.__instance.age}")
-        
+        print(
+            f"Name: {PersonSingleton.__instance.name}, age: {PersonSingleton.__instance.age}")

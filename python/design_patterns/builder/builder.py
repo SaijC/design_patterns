@@ -9,6 +9,7 @@ class House(object):
         self.has_garage = builder.has_garage
         self.has_garden = builder.has_garden
 
+
 @dataclasses.dataclass
 class HouseBuilder:
     windows: int = 0
@@ -17,7 +18,5 @@ class HouseBuilder:
     has_garage: bool = False
     has_garden: bool = False
 
-
     def build(self):
         return House(self)
-    
