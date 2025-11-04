@@ -4,26 +4,25 @@ class IPerson(metaclass=ABCMeta):
     def print_data():
         """implement in child class"""
 
-
-class PersonSingelton(IPerson):
+class PersonSingleton(IPerson):
 
     __instance = None
 
     @staticmethod
     def get_instance():
-        if PersonSingelton.__instance == None:
-            PersonSingelton("Default Name", 0)
+        if PersonSingleton.__instance == None:
+            PersonSingleton("Default Name", 0)
         return __instance
     
     def __init__(self, name:str, age: int):
-        if PersonSingelton.__instance != None:
-            raise Exception("Singelton can't be instantiated more than onece!")
+        if PersonSingleton.__instance != None:
+            raise Exception("Singleton can't be instantiated more than ones!")
         else:
             self.name = name
             self.age = age
-            PersonSingelton.__instance = self
+            PersonSingleton.__instance = self
 
     @staticmethod
     def print_data():
-        print(f"Name: {PersonSingelton.__instance.name}, age: {PersonSingelton.__instance.age}")
+        print(f"Name: {PersonSingleton.__instance.name}, age: {PersonSingleton.__instance.age}")
         
