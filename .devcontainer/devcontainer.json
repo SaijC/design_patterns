@@ -9,6 +9,13 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"portsAttributes": {
+		  "8000": {
+			    "label": "My App",
+				"onAutoForward": "notify",
+    			"physicalPort": 5380
+  			}
+	},
 	"forwardPorts": [5380],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
