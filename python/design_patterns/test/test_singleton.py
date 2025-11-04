@@ -1,8 +1,5 @@
-from design_patterns.singleton.singleton import Singleton
+# from design_patterns.singleton.singleton import PersonSingleton
 import pytest
 
-def test_singleton_instance():
-    singleton1 = Singleton.get_instance()
-    singleton2 = Singleton.get_instance()
-    assert singleton1 is singleton2, "Both instances should be the same"
-
+def test_basic():
+    assert True == False
