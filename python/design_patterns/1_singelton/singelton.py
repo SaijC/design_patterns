@@ -12,7 +12,7 @@ class PersonSingleton(IPerson):
     def get_instance():
         if PersonSingleton.__instance == None:
             PersonSingleton("Default Name", 0)
-        return __instance
+        return PersonSingleton.__instance
     
     def __init__(self, name:str, age: int):
         if PersonSingleton.__instance != None:
